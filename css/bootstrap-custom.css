@@ -1,0 +1,43 @@
+.pager-lg {
+    font-size: large;
+}
+
+.pager-control {
+    font-size: x-large;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+/* Use to collapse empty button columns */
+
+.hideable {
+    min-height: 0px;
+}
+
+label.label-switch {
+    margin-top: 5px;
+}
+
+.aclogo {
+	vertical-align: baseline;
+	margin-left: 5px;
+}
+
+.intro {
+	max-width: 1024px;
+}
+h2.about-heading {
+	font-size: 20px;
+	margin-bottom: 10px;
+}
+.h1text-danger {
+	color: #b94a48 !important;
+}
+
+.select2-container.form-control {
+	padding: 0px;
+	height: 100%;
+}
+.navbar-brand {
+	padding: 0px;
+}
