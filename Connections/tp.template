@@ -1,0 +1,14 @@
+// create a file in here called tp.php
+// this file needs the following variables
+<?php
+$hostname_tp = "localhost"; // your mysql database IP
+$database_tp = "databasename"; // the name of your database
+$username_tp = "databaseuser"; // the user on the database
+$password_tp = "password"; // the user's password
+
+// set the error level, depending on whether you're developing or putting into production
+// $err_level = error_reporting(0); // 0 for none, E_ERROR, E_WARNING, E_ALL
+$err_level = error_reporting(E_ALL); // 0 for none, E_ERROR, E_WARNING, E_ALL
+error_reporting($err_level);
+$con = mysqli_connect($hostname_tp,$username_tp,$password_tp,$database_tp);
+?>
