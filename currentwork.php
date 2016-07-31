@@ -9,18 +9,20 @@ require_once('Connections/tp.php');
     $sql = "SELECT distinct `industry`, `industry_name`, st_name FROM `skilled_migrants` WHERE `st_code` = $state order by `industry_name`";
     if (isset($_GET['d'])) { // we want the industries in this district
       $d = mysqli_real_escape_string($con,$_GET['d']);
-      $sql = "SELECT distinct `industry`, `industry_name`, st_name FROM `skilled_migrants` WHERE `st_code` = $state and sa2 = $d order by `industry_name`";    
+      $sql = "SELECT distinct `industry`, `industry_name`, st_name, sa2_name FROM `skilled_migrants` WHERE `st_code` = $state and sa2 = $d order by `industry_name`";    
     }
     $rsIndustries = mysqli_query($con,$sql);// or die("Sorry, the server's too busy. Relax, take a deep breath, and refresh the page");
     $industry = mysqli_fetch_assoc($rsIndustries);
     $industryCount = mysqli_num_rows($rsIndustries);
-    echo "<script> console.log('{$industry['industry_name']}'); </script>";    
-    echo "<script> console.log('$industryCount'); </script>";  
+    // echo "<script> console.log('{$industry['industry_name']}'); </script>";    
+    // echo "<script> console.log('$industryCount'); </script>";  
     // get a list of districts
     $sql = "SELECT distinct `sa2`, `sa2_name` FROM `skilled_migrants` WHERE `st_code` = $state order by `sa2_name`";
     $rsDistricts = mysqli_query($con,$sql);// or die("Sorry, the server's too busy. Relax, take a deep breath, and refresh the page");
     $district = mysqli_fetch_assoc($rsDistricts);
-    $districtName = $district['sa2_name'].', ';
+    if (isset($_GET['d'])) {
+        $districtName = $industry['sa2_name'].', ';
+    }
     $districtCount = mysqli_num_rows($rsDistricts);
   }
 ?>
@@ -82,7 +84,7 @@ require_once('Connections/tp.php');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img src="img/logo-rev.png" width="220" height="34" alt="assesscheck"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logo-rev.png" width="220" height="34" alt="assesscheck"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -122,7 +124,10 @@ require_once('Connections/tp.php');
                   <h2>Skills in Demand in <?php echo $districtName.$industry['st_name']; ?></h2>
                   <?php
                   if ($industryCount > 0) {
-                    echo "<div class='row'><div class='col-md-6'>";                    
+
+                    echo '<p><a href="currentwork.php" class="btn btn-success">Back to the map...</a></p>';
+                    echo "<div class='row'><div class='col-md-6'>"; 
+                    echo "<p>The jobs listed here were given to migrant workers due to a lack of local applicants. Each represents an opportunity for you to fill a skills gap.</p>";                   
                     echo "<h3>Industries hiring</h3>";
                     echo "<p>Click on a target industry to see individual job details</p><ul>";
                     do {
@@ -135,7 +140,7 @@ require_once('Connections/tp.php');
                     echo "</ul></div><div class='col-md-6'>"; // close the industry list, make a column for districts
                       if ($districtCount > 0) {
                         echo "<h3>Districts with jobs</h3>";
-                    echo "<p>Click on a district to see the industries that are hiring</p><ul>"; do {
+                    echo "<p>Click on a district to see the industries that are hiring in that district</p><ul>"; do {
                       echo "<li><a href='currentwork.php?s=$state&d=".$district['sa2']."'>".$district['sa2_name']."</a></li>";
                     } while($district = mysqli_fetch_assoc($rsDistricts));
                     echo '</ul>';

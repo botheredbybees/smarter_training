@@ -4,22 +4,14 @@ require_once('Connections/tp.php');
   $industryCount = 0;
   $jobCount = 0;
   $districtName = '';
-  if (isset($_GET['s'])) {
-    $state = mysqli_real_escape_string($con,$_GET['s']);
-    if (isset($_GET['i'])) {
-      $ind = mysqli_real_escape_string($con,$_GET['i']);
-    }
-    $sql = "SELECT distinct occupation, occupation_name, st_name, `industry_name`  FROM `skilled_migrants` WHERE `st_code` = $state and industry = $ind order by `industry_name`";
-    if (isset($_GET['d'])) { // we want the jobs in this district for this industry
-      $d = mysqli_real_escape_string($con,$_GET['d']);
-      $sql = "SELECT  distinct occupation, occupation_name, st_name, `industry_name`, sa2_name  FROM `skilled_migrants` WHERE sa2 = $d order by `industry_name`";    
-    }
-    echo "<script> console.log('$sql'); </script>";
+  if (isset($_GET['o'])) {
+    $occ = mysqli_real_escape_string($con,$_GET['o']);
+    $sql = "SELECT distinct *  FROM `skilled_migrants` WHERE `occupation` = $occ order by `occupation_name`";
+    
+    // echo "<script> console.log('$sql'); </script>";
     $rsOccupations = mysqli_query($con,$sql);// or die("Sorry, the server's too busy. Relax, take a deep breath, and refresh the page");
     $job = mysqli_fetch_assoc($rsOccupations);
-    if (isset($_GET['d'])) {
-      $districtName = $job['sa2_name'].', ';
-    }
+    
     $jobCount = mysqli_num_rows($rsOccupations);
     // echo "<script> console.log('{$industry['industry_name']}'); </script>";    
     // echo "<script> console.log('$industryCount'); </script>";  
@@ -70,6 +62,14 @@ require_once('Connections/tp.php');
           <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
           <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
           <![endif]-->
+          <style>
+          .jobdescription {
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 15px;
+            padding: 10px;
+          } 
+          </style>
 </head>
 
 <body data-spy="scroll" data-offset="80">
@@ -84,7 +84,7 @@ require_once('Connections/tp.php');
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php"><img src="img/logo-rev.png" width="220" height="34" alt="assesscheck"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/logo-rev.png" width="220" height="34" alt="assesscheck"></a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -121,19 +121,19 @@ require_once('Connections/tp.php');
             <!--center heading row-->
             <div class="row">
                 <div class="col-md-12">
-                  <h2><?php echo $job['industry_name']; ?> jobs recently filled in <?php echo $districtName.$job['st_name']; ?></h2>
-                  <p><a href="currentwork.php" class="btn btn-success">Back to the map</a> 
-                  <?php if (isset($_GET['i'])) { ?>
-                  <a href="http://www.myskills.gov.au/Courses/Search?keywords=<?php echo $job['industry_name']; ?>&distance=25" class="btn btn-success" target="_blank">Find training for this industry</a></p>
-                  <?php }
+                  <h2><?php echo $job['occupation_name']; ?></h2>
+                  
+                  <?php 
                   if ($jobCount > 0) {
-                    echo "<div class='row'><div class='col-md-12'>";
-                    echo "<p>Click on a target job to see full job details</p><ul>";
+                    
                     do {
-                      echo "<li><a href='currentjobs_detail.php?o=".$job['occupation'];
-                      echo "'>".$job['industry_name']."</a></li>";
+                      echo "<div class='jobdescription'>";
+                      echo "<p>Pay: ".$job['income_label']."</p>";
+                      echo "<p>Qualification: ".$job['heap_label']."</p>";
+                      echo "<p>Awarded to a ".$job['age_label']." year old ".$job['sex_label']." from ".$job['cob_name']."</p>";
+                      echo "</div>";
                     } while($job = mysqli_fetch_assoc($rsOccupations));
-                    echo "</ul></div>"; // close the row 
+                    echo "</div>"; // close the row 
                   ?>
                 
                   <?php 
