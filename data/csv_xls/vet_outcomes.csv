@@ -1,0 +1,56 @@
+qualification_level,field_of_study,Employed_or_in_further_study_after_training,Enrolled_in_further_study_after_training,Employed_after_training,In_same_occupation_group_as_training_course,Average_salary_those_in_fulltime_work,proportion_employed_after_training,Satisfied_with_the_overall_quality_of_training,achieved_main_reason_for_training,Estimated_number_of_graduates
+Diploma or higher,Natural and Physical Sciences,86.7,40.1,73.3,46.5,60100,36.7,89.5,68.7,2100
+Diploma or higher,Information Technology,83.8,43.8,61.3,29.8,58700,30.2,84.5,72.4,6070
+Diploma or higher,Engineering and Related Technologies,93.7,33.6,86.8,23.1,72300,51.7,81.9,80.5,8340
+Diploma or higher,Architecture and Building,87.5,35.2,78.1,25.3,64700,44.8,84.2,80.8,4710
+Diploma or higher,"Agriculture, Environmental and Related Studies",94.6,26.8,92,43.1,68200,53.3,76.6,78.3,2930
+Diploma or higher,Health,93.5,37.5,88.8,49.6,63500,61.4,83.2,85.8,17740
+Diploma or higher,Education,94.7,31.2,94,64.8,69800,75.6,83.1,90.5,5980
+Diploma or higher,Management and Commerce,92.6,35.1,85.2,17.5,67300,35.9,87.3,79.6,50410
+Diploma or higher,Society and Culture,90.4,30,81.5,16.3,51500,43.2,88,85.4,38940
+Diploma or higher,Creative Arts,83.7,44.4,63.3,8.2,45600,37.6,84,76.9,14260
+Diploma or higher,"Food, Hospitality and Personal Services",80,21,72.8,3.5*,43100,42.1,78.5,84.5,3270
+Certificate IV,Natural and Physical Sciences,80.7,32.8,69.7,51.5,60000,30.2,87.4,71,3890
+Certificate IV,Information Technology,88,57.4,57.8,38.4,51100,30.1,85.1,76,4470
+Certificate IV,Engineering and Related Technologies,94.2,23.8,90.8,31.6,73700,56.8,79.6,82.2,15600
+Certificate IV,Architecture and Building,93.2,23.1,89.8,32.8,66100,51.5*,88.6,88.1,7990
+Certificate IV,"Agriculture, Environmental and Related Studies",93.4,15.4,90.6,43.3,54100,32.5*,92.1,88.3,3640
+Certificate IV,Health,90.3,39.4,79.8,30.5,60100,37.7,88.7,81.6,16080
+Certificate IV,Education,94.1,29.3,91,36.7,75000,47.3,85.1,87.5,29190
+Certificate IV,Management and Commerce,89.6,27.4,81.7,19.9,60100,45.1,86.5,79.5,61420
+Certificate IV,Society and Culture,91.2,37,80.5,30.5,54600,45.5,89.9,86.2,49240
+Certificate IV,Creative Arts,86.2,59.4,59.6,4.1,51000,27,84.8,71.8,7540
+Certificate IV,"Food, Hospitality and Personal Services",88.4,25.4,81,55.6,54200,46.1,84.6,85.2,9500
+Certificate III,Natural and Physical Sciences,83.2,30.7,67.6,52.3,58400,25.8,92.9,73.7,2880
+Certificate III,Information Technology,83,57,51.4,17.7,52200,21.5,80.1,61,4150
+Certificate III,Engineering and Related Technologies,91.2,20.8,87.5,61.4,60000,66,86.8,86.4,71400
+Certificate III,Architecture and Building,94.4,22.4,92.5,87.8,52500,90.1,90.1,95.8,22970
+Certificate III,"Agriculture, Environmental and Related Studies",91.4,26.6,82.4,40.1,51400,42.9,89.5,90.1,13800
+Certificate III,Health,83.4,30.5,73.9,52,46700,41.8,87.4,81.4,13710
+Certificate III,Education,83.7,26.9,75.3,73.7,50400,55.1,90.2,83.1,11280
+Certificate III,Management and Commerce,81.6,33.3,71.2,29.1,45200,40.3,86.2,72.1,80950
+Certificate III,Society and Culture,83.5,38.6,73,66.4,45500,52.9,88.6,84.7,75720
+Certificate III,Creative Arts,81.9,41.7,58.2,33.2,47800,29.6,84.2,79.7,4780
+Certificate III,"Food, Hospitality and Personal Services",87.1,30.4,79.2,58.4,41800,54.8,87.4,87.3,26650
+Certificate II,Natural and Physical Sciences,100,56.3*,98.8,np,52800,np,100,89.6,230
+Certificate II,Information Technology,75.3,51.7,34.5,np,55800,21.5*,90,75.1,2720
+Certificate II,Engineering and Related Technologies,79.3,37.7,67.8,13.4,53500,40.7,89.6,72.2,25520
+Certificate II,Architecture and Building,78.8,43.2,65.5,30.8,38800,44.7,89.8,76.3,5610
+Certificate II,"Agriculture, Environmental and Related Studies",82.8,45.9,67.7,21,49300,35.4,90.4,82.2,5970
+Certificate II,Health,83.6,58.9,57.4,19.6,41100,26.4,90.5,75.2,2990
+Certificate II,Education,na,na,na,na,na,na,na,na,0
+Certificate II,Management and Commerce,80.9,45.9,58.9,22.4,41300,37.1,89.1,67.7,19320
+Certificate II,Society and Culture,68.6,37.3,50.6,25.7,56800,24.7,93.3,77.5,9550
+Certificate II,Creative Arts,79.9,59,57.5,29.5*,43200,17.3*,96.3,87,1140
+Certificate II,"Food, Hospitality and Personal Services",80.4,36.7,65,26.3,53100,40,87.2,81.5,11400
+Certificate I,Natural and Physical Sciences,na,na,na,na,na,na,na,na,0
+Certificate I,Information Technology,65.7,46.4,34.3,np,51800,11.8*,89,76.9,1400
+Certificate I,Engineering and Related Technologies,83,42.2,70.4,26.8,50600,44.8,88.7,76.8,2820
+Certificate I,Architecture and Building,84.9,39.6,73.3,16.8*,55000,49.1,95.1,81.9,1310
+Certificate I,"Agriculture, Environmental and Related Studies",60.5,40.6,40,np,np,31.1*,92.4,83.4,330
+Certificate I,Health,np,np,np,na,na,na,np,na,np
+Certificate I,Education,na,na,na,na,na,na,na,na,0
+Certificate I,Management and Commerce,79.3,43.9,46.3,np,np,np,86.8,84.3,340
+Certificate I,Society and Culture,90.8,41.1,80.8,np,80700,np,100,84.9,410
+Certificate I,Creative Arts,np,np,np,na,na,np,np,np,30
+Certificate I,"Food, Hospitality and Personal Services",86.7,32,78.9,21.2*,59100,49.6,94.6,81.3,1900
